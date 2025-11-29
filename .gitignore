@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+*.stackdump
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*$py.class
+
+# Virtual environments
+.venv/
+.env
+env/
+venv/
+ENV/
+
+# Logs
+*.log
+
+# VSCode
+.vscode/
+
+#docker
+*.env
+docker-compose.override.yml
