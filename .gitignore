@@ -34,3 +34,6 @@ ENV/
 #docker
 *.env
 docker-compose.override.yml
+
+#data
+output/

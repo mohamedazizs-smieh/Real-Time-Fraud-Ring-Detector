@@ -25,7 +25,8 @@ def generate_normal_events(configs):
             'user_id':user_id,
             'product_id':product_id,
             'rating':rating,
-            'timestamp':timestamp.isoformat()
+            'timestamp':timestamp.isoformat(),
+            'is_fraud': False
         })
     return events
 
