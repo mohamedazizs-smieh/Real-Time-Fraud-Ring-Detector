@@ -35,9 +35,12 @@ def generate_fraud_events(configs):
     for i in range(configs['fraud_events']['count']):
         timestamp=random_timestamp(configs['fraud_events']['timestamp_range'])
         user_id=random.randint(*configs['fraud_events']['fraud_user_ids'])
-        case=random.choices([0,1],[configs['fraud_events']['attackers_strategies']['allies_boost']['weight'],
-                configs['fraud_events']['attackers_strategies']['competitors_nerf']['weight']])[0]
-        if case==1:
+        case=random.choices(['boost', 'nerf'],
+        weights=[
+            configs['fraud_events']['attackers_strategies']['allies_boost']['weight'],
+            configs['fraud_events']['attackers_strategies']['competitors_nerf']['weight']
+            ])[0]
+        if case=='boost':
             rating=configs['fraud_events']['attackers_strategies']['allies_boost']['rating_product']
             product_id=configs['fraud_events']['attackers_strategies']['allies_boost']['target_product'][0]
         else:
