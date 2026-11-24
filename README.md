@@ -24,17 +24,22 @@ The events are written to `output/data.jsonl`, one JSON object per line:
 
 ## How to run
 
-From the project root, with the `.venv` virtual environment active:
+From the project root, create a virtual environment and activate it:
+
+- `python -m venv .venv`
+- Windows: `.venv\Scripts\activate`
+- macOS/Linux: `source .venv/bin/activate`
+
+Then:
 
 1. `pip install -r requirements.txt`
 2. `python main.py`
-3. `Get-FileHash output\data.jsonl -Algorithm SHA256`
 
 To run the tests:
 
 `python -m pytest -q`
 
-The hash from step 3 is the reproducibility check: a second run with the same seed must print the same hash.
+The test suite includes a byte-identity check: running the generator twice with the same seed must produce the same file.
 
 ## What is missing
 
