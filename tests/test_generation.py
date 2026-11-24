@@ -46,5 +46,6 @@ def test_path(tmp_path):
     
   subprocess.run([sys.executable, str(script_path)],cwd=tmp_path,check=True,)
   first = (tmp_path / "output" / "data.jsonl").read_bytes()
+  subprocess.run([sys.executable, str(script_path)],cwd=tmp_path,check=True,)
   second = (tmp_path / "output" / "data.jsonl").read_bytes()
   assert(first == second)
